@@ -125,8 +125,8 @@ body {
 /* Header */
 header.main-header {
 	position: sticky;
-    top: 0px;
-    z-index: 1000;
+	top: 0px;
+	z-index: 1000;
 	background: var(--my-veryLightGrey);
 }
 
