@@ -130,12 +130,42 @@ header {
 
 
 
-/* Profile */
-.profile {
-	position: relative;
-	background: var(--my-veryLightGrey)
+/**********************************************************
+					 Profile 
+**********************************************************/
+/* Profile layout */
+.grid-wrapper {
+	display: grid;
+	grid-template-columns: repeat(12,1fr);
+	grid-template-rows: repeat(4,minmax(80px, auto));
+	grid-gap: 10px;
+	margin:	0 auto;
 }
 
+.grid-wrapper .profile {
+	grid-column: 1/13;
+	grid-row: 1/2;
+	position: relative;
+}
+
+.grid-wrapper .profile-nav {
+	grid-column: 5/12;
+	grid-row: 2/3;
+	display: flex;
+	align-items: center;
+}
+
+.grid-wrapper .user-info {
+	grid-column: 2/5;
+	grid-row: 3/5;
+}
+
+.grid-wrapper .variable-profile-section{
+	grid-column: 5/12;
+	grid-row: 3/5;
+}
+
+/* Content style */
 .profile-header div {
 	height: 140px;
 	overflow: hidden;
@@ -152,18 +182,15 @@ header {
 	height: 160px;
 	position: absolute;
 	top: 50px;
-	left: 50%;
+	left: 20%;
 	transform: translateX(-50%);
 	border-radius: 50%;
 	border: 3px solid #FFF;
 }
 
-
-.mt-class {
-	margin-top: 65px;
+.variable-profile-section .troll-section {
+	border: 1px solid #6c757d;
 }
-
-
 
 
 
@@ -182,6 +209,46 @@ header {
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (max-width: 768px) {
+	/* Profile layout */
+	.grid-wrapper {
+		grid-template-rows: repeat(4,minmax(60px, auto));
+	}
+
+	.grid-wrapper .profile {
+		grid-column: 1/13;
+		grid-row: 1/2;
+	}
+
+	.grid-wrapper .profile-nav {
+		grid-column: 1/13;
+		grid-row: 3/4;
+	}
+
+	.grid-wrapper .user-info {
+		grid-column: 1/13;
+		grid-row: 2/3;
+	}
+
+	.grid-wrapper .variable-profile-section{
+		grid-column: 1/13;
+		grid-row: 4/5;
+	}
+
+	.profile-header img:nth-child(2) {
+		left: 50%;
+	}
+	body > div > div.user-info > div {
+		margin-top: 70px;
+		margin-bottom: 0 !important;
+		border-color: transparent !important;
+		border-bottom-color: #6c757d!important;
+		border-radius: none !important;
+		max-width: 100% !important;
+	}
+
+
+
+	/* Other fixes */
 	header .wrapper {
 		width: 90vw;
 		height: 100%;
@@ -194,6 +261,8 @@ header {
 	header .wrapper div.logo-search form input {
 			width: 280px;
 	}
+
+
 }
 
 /* Small devices (landscape phones, 576px and up) */
